@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style type="text/css">
+	
+	body {
+		margin: 0;
+		padding:0;
+		font-size: 12px;
+		font-family: Arial;
+	}
+
+	.colorRed {
+		color:#C40000 !important;
+	}
+
+	div.top a,
+	div.tmall-logo a {
+		color:#999;
+	}
+
+	div.top a:hover,
+	div.tmall-logo a:hover {
+		color:#C40000;
+		text-decoration: none;
+	}
+
+	/*整体布局*/
+
+	div.top {
+		padding-top:5px;
+		padding-bottom:5px;
+		border-bottom:solid 1px #e7e7e7;
+		background-color: #F2F2F2;
+	}
+
+	div.top span,
+	div.top a {
+		margin:0 10px 0 10px;
+		color:#999;
+	}
+
+	div.top a:hover {
+		color:#C40000;
+	}
+
+	/*置顶导航条*/
+	
+	div.tmall-logo {
+		position:absolute;
+		left:0;
+		top: 30px;
+		z-index: -1;
+	}
+
+	div.searchDiv {
+		margin:50px auto;
+		width:400px;
+		height:40px;
+		background-color:#C40000;
+		display: block;
+		padding:1px;
+	}
+
+	div.searchDiv input {
+		width:273px;
+		height:36px;
+		border:solid 1px transparent;
+		margin:1px;
+		padding-left:2px;
+	}
+
+	div.searchDiv button {
+		width:110px;
+		border:solid 1px transparent;
+		height:31px;
+		background-color:#C40000;
+		color:#FFF;
+		font-size:15px;
+		font-weight: bold;
+	}
+
+	div.searchBelow {
+		margin-top:5px;
+		margin-left:-20px;
+	}
+	
+	div.searchBelow a {
+		padding:0 20px 0 20px;
+	}
+
+	div.searchBelow span {
+		color:#999;
+	}
+
+	/*搜索框和LOGO*/
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="top">
+	<a href="#"><span class="glyphicon glyphicon-home colorRed"></span>天猫首页</a>
+	<span>喵，欢迎来天猫</span>
+	<a href="#">请登录</a>
+	<a href="#">免费注册</a>
+	<span class="pull-right">
+		<a href="#">我的订单</a>
+		<a href="#"><span class="glyphicon glyphicon-shopping-cart colorRed"></span>购物车<strong>0</strong>件</a>
+	</span>
+</div>
+
+<div>
+	<div class="tmall-logo">
+		<a href="#">
+			<img src="images/tmall-logo.gif">
+		</a>
+	</div>
+	<div class="searchDiv">
+		<form>
+			<input type="text" name="keyword" placeholder="时尚男鞋  太阳镜">
+			<button type="submit" class="searchButton">搜索</button>
+		</form>
+		<div class="searchBelow">
+			<span>
+				<a href="#">平衡车</a>
+				<span>|</span>
+				<a href="#">扫地机器人</a>
+				<span>|</span>
+				<a href="#">原汁机</a>
+				<span>|</span>
+				<a href="#">冰箱</a>
+			</span>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

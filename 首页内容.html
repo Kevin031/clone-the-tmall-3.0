@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html charset=utf-8">
+	<title>首页内容</title>
+	<script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+	<style type="text/css">
+		
+		body {
+			font-size: 12px;
+			font-family: Arial;
+		}
+
+		/*公共样式*/
+		
+		div.categoryWithCarousel {
+			width:100%;
+			position: relative;
+		}
+
+		div.hearbar {
+			background-color: #DD2727;
+			height:36px;
+		}
+		
+		div.head {
+			width: 190px;
+			height:36px;
+			margin-left: 20px;
+			background-color: #C60A0A;
+			padding-left: 10px;
+			display: inline-block;
+			font-size: 16px;
+			font-weight: bold;
+			color: white;
+			line-height: 36px;
+		}
+		
+		div.rightMenu {
+			display: inline-block;
+		}
+
+		div.rightMenu span {
+			margin:0 20px 0 20px;
+		}
+
+		div.rightMenu img {
+			height:30px;
+		}
+
+		div.rightMenu a {
+			color: white;
+			font-size: 15px;
+			text-decoration: none;
+			line-height: 36px;
+		}
+
+		div.carousel-of-product {
+			width:1024px;
+			height:510px;
+			margin:0 auto;
+		}
+
+		img.carouselImage {
+			height:510px !important;
+		}
+
+		div.carouselBackgroundDiv {
+			height:510px;
+			width: 100%;
+			background-color: #E8E8E8;
+			z-index: -1;
+		}
+
+		/*轮播图*/
+
+		div.cetegoryBar {
+			width: 1020px;
+			height: 510px;
+			position: absolute;
+		}
+		
+		div.categoryMenu {
+			width:200px;
+			background-color: #E2E2E3;
+			margin-left: 20px;
+			float: left;
+		}
+
+		div.eachCategory {
+			line-height: 30px;
+			padding-left: 10px;
+			font-size: 14px;
+		}
+
+		div.eachCategory:hover {
+			background-color: white;
+		}
+
+		div.eachCategory span{
+			margin-right: 10px;
+		}
+
+		div.categoryMenu a {
+			color: #000;
+		}
+
+		div.categoryMenu a:hover {
+			color: rgb(135, 206, 250);
+			text-decoration: none;
+		}
+
+		div.productsAsideCategorys {
+			width:800px;
+			height:510px;
+			background-color: #FFF;
+			float: left;
+		}
+
+		div.separator {
+			margin-top: 20px;
+			border-bottom:dashed 1px #E7E7E7;
+		}
+
+		div.productsAsideCategorys div.row {
+			margin:20px 80px 0px 80px;
+		}
+
+		div.productsAsideCategorys div.row a {
+			color:black;
+			font-size: 14px;
+			margin: 8px;
+		}
+
+		div.productsAsideCategorys div.row a:hover {
+			color: #C40000;
+			text-decoration: none;
+		}
+
+		/*商品分类*/
+
+	</style>
+
+</head>
+<body>
+	<div class="categoryWithCarousel">
+		<div class="hearbar">
+			<div class="head">
+				<span class="glyphicon glyphicon-th-list"></span>
+				<span>商品分类</span>
+			</div>
+			<div class="rightMenu">
+				<span><a href="#"><img src="images/chaoshi.png"></a></span>
+				<span><a href="#"><img src="images/guoji.png"></a></span>
+				<span>
+					<a href="#">平板电视</a>
+				</span>
+				<span>
+					<a href="#">马桶</a>
+				</span>
+				<span>
+					<a href="#">沙发</a>
+				</span>
+				<span>
+					<a href="#">电热水器</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div data-ride="carousel" class="carousel-of-product carousel slide" id="carousel-of-product">
+		  <!-- Indicators -->
+		<ol class="carousel-indicators">
+		    <li class="active" data-slide-to="0" data-target="#carousel-of-product"></li>
+		    <li data-slide-to="1" data-target="#carousel-of-product" class=""></li>
+		    <li data-slide-to="2" data-target="#carousel-of-product" class=""></li>
+		    <li data-slide-to="3" data-target="#carousel-of-product" class=""></li>
+		</ol>
+		  <!-- Wrapper for slides -->
+		<div role="listbox" class="carousel-inner">
+		    <div class="item active">
+		      <img src="images/1.jpg" class="carousel carouselImage">
+		    </div>
+		    <div class="item">
+		      <img src="images/2.jpg" class="carouselImage">
+		    </div>
+		    <div class="item">
+		        <img src="images/3.jpg" class="carouselImage">
+		    </div>
+		    <div class="item">
+		        <img src="images/4.jpg" class="carouselImage">
+		    </div>
+		</div>
+		</div>  
+		  <div class="carouselBackgroundDiv">
+		</div>  
+	</div>
+	<div class="cetegoryBar">
+		<div class="categoryWithCarousel">
+			<div class="categoryMenu">
+				<div class="eachCategory" cid="83">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">平板电视</a>
+				</div>
+				<div class="eachCategory" cid="82">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">马桶</a>
+				</div>
+				<div class="eachCategory" cid="81">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">沙发</a>
+				</div>
+				<div class="eachCategory" cid="80">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">电热水器</a>
+				</div>
+				<div class="eachCategory" cid="79">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">平衡车</a>
+				</div>
+				<div class="eachCategory" cid="78">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">扫地机器人</a>
+				</div>
+				<div class="eachCategory" cid="77">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">原汁机</a>
+				</div>
+				<div class="eachCategory" cid="76">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">冰箱</a>
+				</div>
+				<div class="eachCategory" cid="75">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">空调</a>
+				</div>
+				<div class="eachCategory" cid="74">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">女表</a>
+				</div>
+				<div class="eachCategory" cid="73">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">男表</a>
+				</div>
+				<div class="eachCategory" cid="72">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">男士手拿包</a>
+				</div>
+				<div class="eachCategory" cid="71">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">男士西服</a>
+				</div>
+				<div class="eachCategory" cid="69">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">时尚男鞋</a>
+				</div>
+				<div class="eachCategory" cid="68">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">品牌女装</a>
+				</div>
+				<div class="eachCategory" cid="64">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">太阳镜</a>
+				</div>
+				<div class="eachCategory" cid="60">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#">安全座椅</a>
+				</div>
+			</div>
+		</div>
+		<div class="productsAsideCategorys" cid="83">
+			<div class="row">
+				<a href="#">大影院</a>
+				<a href="#">周末</a>
+				<a href="#">新品特惠</a>
+				<a href="#">32吋电视机</a>
+				<a href="#">智能网络</a>
+			</div>
+			<div class="separator"></div>
+			<div class="row">
+				<a href="#">USB高清解</a>
+				<a href="#">芒果TV在线</a>
+				<a href="#">抢购价</a>
+				<a href="#">USB解码</a>
+				<a href="#">32英吋</a>
+				<a href="#">10核</a>
+				<a href="#">TCL品牌日</a>
+			</div>
+			<div class="separator"></div>
+			<div class="row">
+				<a href="#">不要赠品</a>
+				<a href="#">新品上市</a>
+				<a href="#">4K硬屏</a>
+				<a href="#">领100元券</a>
+				<a href="#" style="color: rgb(135, 206, 250);">智能高清</a>
+				<a href="#">8月，酷暑</a>
+				<a href="#" style="color: rgb(135, 206, 250);">8月大促</a>
+				<a href="#">天猫定制</a>
+			</div>
+			<div class="separator"></div>
+			<div class="row">
+				<a href="#">智能操作系统</a>
+				<a href="#">金色外观</a>
+				<a href="#">三星屏幕</a>
+				<a href="#">客厅爆款</a>
+				<a href="#">八核配置</a>
+				<a href="#">限时特惠</a>
+			</div>
+			<div class="separator"></div>
+			<div class="row">
+				<a href="#">限时特惠</a>
+				<a href="#">热销爆款</a>
+				<a href="#">4K全高清</a>
+				<a href="#" style="color: rgb(135, 206, 250);">六核智能</a>
+				<a href="#">14核4K</a>
+				<a href="#">YUNOS</a>
+				<a href="#" style="color: rgb(135, 206, 250);">YUNOS</a>
+				<a href="#">64位处理器</a>
+			</div>
+			<div class="separator"></div>
+			<div class="row">
+				<a href="#">YUNOS</a>
+				<a href="#">微信电视</a>
+				<a href="#">4k超清</a>
+				<a href="#">64位真4K</a>
+				<a href="#">10核机芯</a>
+				<a href="#">V字黑釉底座</a>
+				<a href="#">4K超清</a>
+			</div>
+			<div class="separator"></div>
+			<div class="row">
+				<a href="#">64位14核</a>
+				<a href="#">海量影视</a>
+				<a href="#">人气爆款</a>
+				<a href="#">限时特惠</a>
+				<a href="#">真4K屏</a>
+				<a href="#">65吋巨屏</a>
+				<a href="#" style="color: rgb(135, 206, 250);">4K超清视界</a>
+				<a href="#">限时特惠</a>
+			</div>
+			<div class="separator"></div>
+			<div class="row">
+				<a href="#">55寸旗舰</a>
+				<a href="#">4K机皇</a>
+				<a href="#">曲面机皇</a>
+				<a href="#" style="color: rgb(135, 206, 250);">轻薄4K</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+    
+      
+       
+     
+      
+      
+       
+  
