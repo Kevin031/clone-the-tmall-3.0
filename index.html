@@ -483,14 +483,17 @@
 
 	div.sideMenu-button:hover {
 		background-color: #C40000;
+		cursor: pointer;
 	}
 
 	div.explainBar {
 		position: fixed;
 		width: 100px;
 		height: 40px;
+		right: 200px;
 		background-color: #686868;
 		opacity: 0;
+		text-align: center;
 	}
 
 	div.explainBar span.triangle {
@@ -509,7 +512,7 @@
 		font-size: 12px;
 		height: 40px;
 		line-height: 40px;
-		padding-left: 25px;
+		width: 100px;
 	}
 
 	/*侧边栏*/
@@ -518,7 +521,7 @@
 </head>
 <body>
 
-<div class="topbar">
+<div class="topbar" id="topbar">
 	<div class="top">
 		<div class="top-wrap">
 			<div class="container">
@@ -581,9 +584,7 @@
 		<span class="triangle"></span>
 	</div>
 	<div class="sideMenu-button" id="vipRight">
-		<a href="#">
-			<img width="25px" src="images/vipRight.png">
-		</a>
+		<img width="22px" src="images/vipRight.png">
 		<div class="straightLine"></div>
 	</div>
 	<div class="shoppingCart">
@@ -593,35 +594,37 @@
 			<div class="straightLine"></div>
 		</a>
 	</div>
-	<div class="sideMenu-button">
+	<div class="sideMenu-button" id="Renminbi">
 		<img width="22px" src="images/Renminbi-icon.png">
 	</div>
-	<div class="sideMenu-button">
+	<div class="sideMenu-button" id="like">
 		<img width="22px" src="images/like-icon.png">
 	</div>
-	<div class="sideMenu-button">
+	<div class="sideMenu-button" id="save">
 		<img width="22px" src="images/save-icon.png">
 	</div>
-	<div class="sideMenu-button">
+	<div class="sideMenu-button" id="looked">
 		<img width="22px" src="images/looked-icon.png">
 	</div>
-	<div class="sideMenu-button">
+	<div class="sideMenu-button" id="givemoney">
 		<img width="22px" src="images/givemoney-icon.png">
 	</div>
 	<div style="height:200px;"></div>
-	<div class="sideMenu-button">
+	<div class="sideMenu-button" id="suggest">
 		<img width="22px" src="images/suggest-icon.png">
 	</div>
-	<div class="sideMenu-button">
+	<div class="sideMenu-button" id="QRcode">
 		<img width="22px" src="images/QRcode-icon.png">
 	</div>
-	<div class="sideMenu-button">
-		<img width="22px" src="images/top-icon.png">
+	<div class="sideMenu-button" id="top">
+		<a href="#topbar">
+			<img width="22px" src="images/top-icon.png">
+		</a>
 	</div>
 
 	<script type="text/javascript">
 
-		$(document).ready(function(){
+		/*$(document).ready(function(){
 			$("#vipRight").mouseenter(function(){
 				var me = $(this);
 				$("#explainBar").css({
@@ -641,8 +644,40 @@
 					opacity:'0'
 				},300);
 			});
-		});
+		});*/
+		function explainBar(objectId,contentText){
+			$(objectId).mouseenter(function(){
+				var me = $(this);
+				$("#explainBar").css({
+					"top":me.offset().top - $(document).scrollTop(),
+					"right":"80px"
+				});
+				$("#explainBar-text").text(contentText);
+				$("#explainBar").stop(false, true);
+				$("#explainBar").animate({
+					right:'38px',
+					opacity:'1'
+				},500);
+			});
+			$(objectId).mouseleave(function(){
+				$("#explainBar").stop(false, true);
+				$("#explainBar").animate({
+					right:'80px',
+					opacity:'0'
+				},500);
+			});
+		}
 
+		$(document).ready(function(){
+			explainBar("#vipRight","会员权益");
+			explainBar("#Renminbi","我的资产");
+			explainBar("#like","我关注的品牌");
+			explainBar("#save","我的收藏");
+			explainBar("#looked","我看过的");
+			explainBar("#givemoney","我要充值");
+			explainBar("#suggest","用户反馈");
+		});
+		
 	</script>
 
 </div>
@@ -2145,6 +2180,546 @@
 				</span>
 				<span class="productPrice">
 					551.00
+				</span>
+			</a>
+		</div>
+	</div>
+	<div class="eachHomepageCetegolyProducts">
+		<div class="leftmark"></div>
+		<span class="cetegolyTitle">安全座椅</span>
+		<br />
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10192.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					新生儿婴儿提篮式安全座椅汽车用车载儿童安
+				</span>
+				<span class="productPrice">
+					 882.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10181.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY汽车儿童安全座椅ISOFI
+				</span>
+				<span class="productPrice">
+					 1,344.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10170.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY儿童安全座椅9个月-12岁
+				</span>
+				<span class="productPrice">
+					1,216.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10159.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					好孩子汽车儿童安全座椅goodbaby9
+				</span>
+				<span class="productPrice">
+					1,199.40
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10148.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					惠尔顿儿童安全座椅isofix硬接口汽车
+				</span>
+				<span class="productPrice">
+					1,993.60
+				</span>
+			</a>
+		</div>
+	</div>
+	<div class="eachHomepageCetegolyProducts">
+		<div class="leftmark"></div>
+		<span class="cetegolyTitle">安全座椅</span>
+		<br />
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10192.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					新生儿婴儿提篮式安全座椅汽车用车载儿童安
+				</span>
+				<span class="productPrice">
+					 882.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10181.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY汽车儿童安全座椅ISOFI
+				</span>
+				<span class="productPrice">
+					 1,344.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10170.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY儿童安全座椅9个月-12岁
+				</span>
+				<span class="productPrice">
+					1,216.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10159.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					好孩子汽车儿童安全座椅goodbaby9
+				</span>
+				<span class="productPrice">
+					1,199.40
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10148.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					惠尔顿儿童安全座椅isofix硬接口汽车
+				</span>
+				<span class="productPrice">
+					1,993.60
+				</span>
+			</a>
+		</div>
+	</div>
+	<div class="eachHomepageCetegolyProducts">
+		<div class="leftmark"></div>
+		<span class="cetegolyTitle">安全座椅</span>
+		<br />
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10192.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					新生儿婴儿提篮式安全座椅汽车用车载儿童安
+				</span>
+				<span class="productPrice">
+					 882.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10181.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY汽车儿童安全座椅ISOFI
+				</span>
+				<span class="productPrice">
+					 1,344.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10170.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY儿童安全座椅9个月-12岁
+				</span>
+				<span class="productPrice">
+					1,216.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10159.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					好孩子汽车儿童安全座椅goodbaby9
+				</span>
+				<span class="productPrice">
+					1,199.40
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10148.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					惠尔顿儿童安全座椅isofix硬接口汽车
+				</span>
+				<span class="productPrice">
+					1,993.60
+				</span>
+			</a>
+		</div>
+	</div>
+	<div class="eachHomepageCetegolyProducts">
+		<div class="leftmark"></div>
+		<span class="cetegolyTitle">安全座椅</span>
+		<br />
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10192.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					新生儿婴儿提篮式安全座椅汽车用车载儿童安
+				</span>
+				<span class="productPrice">
+					 882.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10181.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY汽车儿童安全座椅ISOFI
+				</span>
+				<span class="productPrice">
+					 1,344.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10170.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY儿童安全座椅9个月-12岁
+				</span>
+				<span class="productPrice">
+					1,216.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10159.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					好孩子汽车儿童安全座椅goodbaby9
+				</span>
+				<span class="productPrice">
+					1,199.40
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10148.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					惠尔顿儿童安全座椅isofix硬接口汽车
+				</span>
+				<span class="productPrice">
+					1,993.60
+				</span>
+			</a>
+		</div>
+	</div>
+	<div class="eachHomepageCetegolyProducts">
+		<div class="leftmark"></div>
+		<span class="cetegolyTitle">安全座椅</span>
+		<br />
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10192.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					新生儿婴儿提篮式安全座椅汽车用车载儿童安
+				</span>
+				<span class="productPrice">
+					 882.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10181.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY汽车儿童安全座椅ISOFI
+				</span>
+				<span class="productPrice">
+					 1,344.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10170.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY儿童安全座椅9个月-12岁
+				</span>
+				<span class="productPrice">
+					1,216.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10159.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					好孩子汽车儿童安全座椅goodbaby9
+				</span>
+				<span class="productPrice">
+					1,199.40
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10148.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					惠尔顿儿童安全座椅isofix硬接口汽车
+				</span>
+				<span class="productPrice">
+					1,993.60
+				</span>
+			</a>
+		</div>
+	</div>
+	<div class="eachHomepageCetegolyProducts">
+		<div class="leftmark"></div>
+		<span class="cetegolyTitle">安全座椅</span>
+		<br />
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10192.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					新生儿婴儿提篮式安全座椅汽车用车载儿童安
+				</span>
+				<span class="productPrice">
+					 882.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10181.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY汽车儿童安全座椅ISOFI
+				</span>
+				<span class="productPrice">
+					 1,344.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10170.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY儿童安全座椅9个月-12岁
+				</span>
+				<span class="productPrice">
+					1,216.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10159.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					好孩子汽车儿童安全座椅goodbaby9
+				</span>
+				<span class="productPrice">
+					1,199.40
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10148.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					惠尔顿儿童安全座椅isofix硬接口汽车
+				</span>
+				<span class="productPrice">
+					1,993.60
+				</span>
+			</a>
+		</div>
+	</div>
+	<div class="eachHomepageCetegolyProducts">
+		<div class="leftmark"></div>
+		<span class="cetegolyTitle">安全座椅</span>
+		<br />
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10192.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					新生儿婴儿提篮式安全座椅汽车用车载儿童安
+				</span>
+				<span class="productPrice">
+					 882.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10181.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY汽车儿童安全座椅ISOFI
+				</span>
+				<span class="productPrice">
+					 1,344.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10170.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY儿童安全座椅9个月-12岁
+				</span>
+				<span class="productPrice">
+					1,216.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10159.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					好孩子汽车儿童安全座椅goodbaby9
+				</span>
+				<span class="productPrice">
+					1,199.40
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10148.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					惠尔顿儿童安全座椅isofix硬接口汽车
+				</span>
+				<span class="productPrice">
+					1,993.60
+				</span>
+			</a>
+		</div>
+	</div>
+	<div class="eachHomepageCetegolyProducts">
+		<div class="leftmark"></div>
+		<span class="cetegolyTitle">安全座椅</span>
+		<br />
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10192.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					新生儿婴儿提篮式安全座椅汽车用车载儿童安
+				</span>
+				<span class="productPrice">
+					 882.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10181.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY汽车儿童安全座椅ISOFI
+				</span>
+				<span class="productPrice">
+					 1,344.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10170.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY儿童安全座椅9个月-12岁
+				</span>
+				<span class="productPrice">
+					1,216.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10159.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					好孩子汽车儿童安全座椅goodbaby9
+				</span>
+				<span class="productPrice">
+					1,199.40
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10148.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					惠尔顿儿童安全座椅isofix硬接口汽车
+				</span>
+				<span class="productPrice">
+					1,993.60
+				</span>
+			</a>
+		</div>
+	</div>
+	<div class="eachHomepageCetegolyProducts">
+		<div class="leftmark"></div>
+		<span class="cetegolyTitle">安全座椅</span>
+		<br />
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10192.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					新生儿婴儿提篮式安全座椅汽车用车载儿童安
+				</span>
+				<span class="productPrice">
+					 882.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10181.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY汽车儿童安全座椅ISOFI
+				</span>
+				<span class="productPrice">
+					 1,344.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10170.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					REEBABY儿童安全座椅9个月-12岁
+				</span>
+				<span class="productPrice">
+					1,216.00
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10159.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					好孩子汽车儿童安全座椅goodbaby9
+				</span>
+				<span class="productPrice">
+					1,199.40
+				</span>
+			</a>
+		</div>
+		<div class="productItem">
+			<a href="#"><img width="100px" src="images/10148.jpg"></a>
+			<a href="#" class="productItemDiscLink">
+				<span class="productItemDisc">[热销]
+					惠尔顿儿童安全座椅isofix硬接口汽车
+				</span>
+				<span class="productPrice">
+					1,993.60
 				</span>
 			</a>
 		</div>
